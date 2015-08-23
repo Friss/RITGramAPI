@@ -8,6 +8,10 @@ var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/zf
 
 var PAGE_SIZE = 48;
 
+pg.on('error', function(error) {
+  console.warn(error);
+})
+
 router.get('/', function(req, res, next) {
   res.send();
 });
