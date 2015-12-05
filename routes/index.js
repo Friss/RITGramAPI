@@ -16,6 +16,12 @@ router.get('/', function(req, res, next) {
   res.send();
 });
 
+router.get('/health-check', function(req, res, next) {
+  res.render('health-check', {
+    title: "Health check"
+  });
+});
+
 router.get('/api/v1/pictures', function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
